@@ -13,7 +13,7 @@ import { Container } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 
 import Drawer from "./Drawer"
-import Header from "./Header"
+import Header from "./header"
 import "./layout.css"
 
 const useStyles = makeStyles(theme => ({
