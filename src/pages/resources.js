@@ -19,7 +19,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow"
 
 import ItemBox from "./../components/ItemBox"
-import Layout from "./../components/Layout"
+import Layout from "./../components/layout"
 
 const useStyles = makeStyles(theme => ({
   root: {
