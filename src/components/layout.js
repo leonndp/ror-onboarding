@@ -23,13 +23,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Layout = ({ children, drawer = "user" }) => {
+const Layout = ({ children, drawerView = "user" }) => {
   const classes = useStyles()
   return (
     <>
       <Header />
       <div className={classes.root}>
-        <Drawer drawer={drawer} />
+        <Drawer drawerView={drawerView} />
         {children}
       </div>
     </>

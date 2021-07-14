@@ -48,7 +48,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Layout>
+      <Layout drawerView="login">
         <div className={classes.root}>
           <Container className={classes.container} maxWidth="sm">
             <Box hidden={activeStep !== 1}>

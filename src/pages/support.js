@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
@@ -36,6 +36,12 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const SupportPage = () => {
+  const [activeTab, setActiveTab] = useState(0)
+
+  const handleTabChange = (event, newTab) => {
+    setActiveTab(newTab)
+  }
+
   const classes = useStyles()
 
   return (
@@ -44,7 +50,8 @@ const SupportPage = () => {
         <Container className={classes.container}>
           <Box textAlign="center">
             <Tabs
-              value={0}
+              value={activeTab}
+              onChange={handleTabChange}
               indicatorColor="primary"
               textColor="primary"
               centered
@@ -58,32 +65,66 @@ const SupportPage = () => {
                 Contact Support
               </Button>
             </Box>
-            <Grid container spacing={5}>
-              <Grid item xs={12} sm={6} md={4}>
-                <ProfileCard>
-                  <StaticImage
-                    className={classes.image}
-                    src={"./../images/avatar.png"}
-                  />
-                </ProfileCard>
+            <Box hidden={activeTab !== 0}>
+              <Grid container spacing={5}>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard>
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/avatar.png"}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard>
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/avatar.png"}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard>
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/avatar.png"}
+                    />
+                  </ProfileCard>
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <ProfileCard>
-                  <StaticImage
-                    className={classes.image}
-                    src={"./../images/avatar.png"}
-                  />
-                </ProfileCard>
+            </Box>
+            <Box hidden={activeTab !== 1}>
+              <Grid container spacing={5}>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard>
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/avatar.png"}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard>
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/avatar.png"}
+                    />
+                  </ProfileCard>
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <ProfileCard>
-                  <StaticImage
-                    className={classes.image}
-                    src={"./../images/avatar.png"}
-                  />
-                </ProfileCard>
+            </Box>
+            <Box hidden={activeTab !== 2}>
+              <Grid container spacing={5}>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard>
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/avatar.png"}
+                    />
+                  </ProfileCard>
+                </Grid>
               </Grid>
-            </Grid>
+            </Box>
           </Box>
         </Container>
       </div>

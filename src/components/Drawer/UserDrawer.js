@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "gatsby"
 
 import {
   Box,
@@ -55,13 +56,13 @@ const Drawer = () => {
       <Container className={classes.container} maxWidth="sm">
         <List>
           <StaticImage src="../../images/ror_logo.png" />
-          <ListItem button>
+          <ListItem button onClick={e => navigate("/support")}>
             <ListItemText primary="Support Team" />
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={e => navigate("/documents")}>
             <ListItemText primary="Documents" />
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={e => navigate("/resources")}>
             <ListItemText primary="Resources" />
           </ListItem>
         </List>
