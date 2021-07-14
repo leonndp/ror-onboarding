@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <AppBar className={classes.root} position="fixed">
       <Toolbar>
-        <StaticImage src="./../images/ror_logo-color.png" />
+        {/* <StaticImage src="./../images/ror_logo-color.png" /> */}
       </Toolbar>
     </AppBar>
   )
