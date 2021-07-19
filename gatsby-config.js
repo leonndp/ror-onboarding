@@ -16,7 +16,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          placeholder: "blurred",
+        },
+      },
+    },
     "gatsby-plugin-material-ui",
     {
       resolve: `gatsby-plugin-manifest`,

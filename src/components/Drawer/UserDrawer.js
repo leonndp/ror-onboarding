@@ -1,19 +1,25 @@
 import React from "react"
-import { navigate } from "gatsby"
+import { navigate, Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
+import fa from "@fortawesome/fontawesome-free/css/all.css"
 import {
   Box,
   Button,
   Container,
   Drawer as MuiDrawer,
+  Icon,
   List,
   ListItem,
+  ListItemIcon,
   ListItemText,
   Typography,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 
-import { StaticImage } from "gatsby-plugin-image"
+import ContactSupportIcon from "@material-ui/icons/ContactSupport"
+import DescriptionIcon from "@material-ui/icons/Description"
+import MenuBookIcon from "@material-ui/icons/MenuBook"
 
 const useStyles = makeStyles(theme => ({
   drawer: {
@@ -37,6 +43,9 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
     color: "white",
   },
+  icon: {
+    width: "auto",
+  },
 }))
 
 const Drawer = () => {
@@ -55,19 +64,78 @@ const Drawer = () => {
     >
       <Container className={classes.container} maxWidth="sm">
         <List>
-          <StaticImage src="../../images/ror_logo.png" />
-          <ListItem button onClick={e => navigate("/support")}>
+          <Box pb={5}>
+            <Link to="/dashboard">
+              <StaticImage src="../../images/ror_logo.png" />
+            </Link>
+          </Box>
+
+          <ListItem
+            button
+            component="a"
+            href="/support"
+            /* onClick={e => {
+              navigate("/support")
+            }} */
+          >
+            <ListItemIcon>
+              {/* <ContactSupportIcon color="secondary" /> */}
+              <Icon
+                className="fa fa-id-card"
+                color="secondary"
+                fontSize="small"
+                classes={{ root: classes.icon }}
+              />
+            </ListItemIcon>
             <ListItemText primary="Support Team" />
           </ListItem>
-          <ListItem button onClick={e => navigate("/documents")}>
+          <ListItem
+            button
+            component="a"
+            href="/documents"
+            /* onClick={e => {
+              navigate("/support")
+            }} */
+          >
+            <ListItemIcon>
+              <Icon
+                className="fa fa-file-signature"
+                color="secondary"
+                fontSize="small"
+                classes={{ root: classes.icon }}
+              />
+            </ListItemIcon>
             <ListItemText primary="Documents" />
           </ListItem>
-          <ListItem button onClick={e => navigate("/resources")}>
+          <ListItem
+            button
+            component="a"
+            href="/resources"
+            /* onClick={e => {
+              navigate("/support")
+            }} */
+          >
+            <ListItemIcon>
+              <Icon
+                className="fa fa-book"
+                color="secondary"
+                fontSize="small"
+                classes={{ root: classes.icon }}
+              />
+              {/* <MenuBookIcon color="secondary" /> */}
+            </ListItemIcon>
             <ListItemText primary="Resources" />
           </ListItem>
         </List>
         <Button color="primary" variant="contained" size="large">
-          Schedule an Appointment
+          <Link
+            href="https://link.queup.com/widget/appointment/service/kent?group=queup"
+            target="_blank"
+            rel="noreferrer noopener"
+            style={{ color: "white" }}
+          >
+            Schedule Appointment
+          </Link>
         </Button>
       </Container>
     </MuiDrawer>

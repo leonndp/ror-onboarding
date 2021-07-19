@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import {
   Box,
   Button,
+  ButtonBase,
   Container,
   Drawer,
   Grid,
@@ -34,6 +35,10 @@ const useStyles = makeStyles(theme => ({
   image: {
     marginBottom: "1rem",
   },
+  button: {
+    width: "100%",
+    display: "block",
+  },
 }))
 
 const DashboardPage = () => {
@@ -45,32 +50,44 @@ const DashboardPage = () => {
           <Box textAlign="center">
             <Grid container spacing={5}>
               <Grid item xs={12} md={6}>
-                <ItemBox>
-                  <StaticImage
-                    src="../images/star-icon.png"
-                    className={classes.image}
-                  />
-                  <Typography color="primary" gutterBottom variant="h3">
-                    Ready to
-                    <br />
-                    Get Started
-                  </Typography>
-                  <DoubleArrowIcon color="primary" />
-                </ItemBox>
+                <ButtonBase
+                  component="a"
+                  href="/documents"
+                  classes={{ root: classes.button }}
+                >
+                  <ItemBox>
+                    <StaticImage
+                      src="../images/star-icon.png"
+                      className={classes.image}
+                    />
+                    <Typography color="primary" gutterBottom variant="h3">
+                      Ready to
+                      <br />
+                      Get Started
+                    </Typography>
+                    <DoubleArrowIcon color="primary" />
+                  </ItemBox>
+                </ButtonBase>
               </Grid>
               <Grid item xs={12} md={6}>
-                <ItemBox>
-                  <StaticImage
-                    src="../images/megaphone-icon.png"
-                    className={classes.image}
-                  />
-                  <Typography color="primary" gutterBottom variant="h3">
-                    Ready to
-                    <br />
-                    Get Started
-                  </Typography>
-                  <DoubleArrowIcon color="primary" />
-                </ItemBox>
+                <ButtonBase
+                  component="a"
+                  href="/reference"
+                  classes={{ root: classes.button }}
+                >
+                  <ItemBox>
+                    <StaticImage
+                      src="../images/megaphone-icon.png"
+                      className={classes.image}
+                    />
+                    <Typography color="primary" gutterBottom variant="h3">
+                      Learn
+                      <br />
+                      More
+                    </Typography>
+                    <DoubleArrowIcon color="primary" />
+                  </ItemBox>
+                </ButtonBase>
               </Grid>
             </Grid>
           </Box>

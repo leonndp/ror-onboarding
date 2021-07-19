@@ -50,8 +50,14 @@ const Drawer = () => {
       <Container className={classes.container} maxWidth="sm">
         <StaticImage src="../../images/ror_logo.png" layout="fixed" />
         <Box color="#fff">
-          <Typography variant="h1">Welcome</Typography>
-          <Typography variant="h2">Crunch Team</Typography>
+          <StaticImage
+            src="../../images/welcome.png"
+            alt="Welcome"
+            layout="fixed"
+          />
+          <Box clone py={2}>
+            <Typography variant="h2">Crunch Team</Typography>
+          </Box>
           <Typography>
             This is your on-boarding portal where you can access your agreement
             docs and have access to your support team

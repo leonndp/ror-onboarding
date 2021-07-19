@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
@@ -43,37 +44,51 @@ const ResourcesPage = () => {
       <div className={classes.root}>
         <Container className={classes.container} maxWidth="md">
           <Box textAlign="center">
-            <Typography variant="h4" color="primary">
+            <Typography variant="h4" color="textPrimary">
               Download ROR Agreements
             </Typography>
             <Box py={7}>
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <ItemBox>
-                    <Typography variant="h5" color="primary">
+                    <Typography variant="h5" color="textPrimary">
                       Presentation
                     </Typography>
                     <Box py={3}>
-                      <Typography color="primary">
+                      <Typography color="textPrimary">
                         Download and view the PowerPoint presentation
                       </Typography>
                     </Box>
-                    <Button variant="contained" color="primary">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      component="a"
+                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
                       Download
                     </Button>
                   </ItemBox>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <ItemBox>
-                    <Typography variant="h5" color="primary">
+                    <Typography variant="h5" color="textPrimary">
                       Presentation
                     </Typography>
                     <Box py={3}>
-                      <Typography color="primary">
+                      <Typography color="textPrimary">
                         Download and view the PowerPoint presentation
                       </Typography>
                     </Box>
-                    <Button variant="contained" color="primary">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      component="a"
+                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
                       Download
                     </Button>
                   </ItemBox>

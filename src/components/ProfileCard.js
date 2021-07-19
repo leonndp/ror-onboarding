@@ -22,7 +22,7 @@ const ProfileCard = ({
   return (
     <ItemBox>
       <Box className={classes.image}>{children}</Box>
-      <Typography color="primary">
+      <Typography color="textPrimary">
         <Box component="span" fontWeight={700}>
           {name}
         </Box>

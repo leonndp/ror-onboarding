@@ -1,3 +1,9 @@
+@font-face {
+  font-family: Sansation;
+  src: url(../fonts/sansation_regular-webfont.woff);
+  /* src: url(../fonts/sansation_bold-webfont.woff); */
+}
+
 img {
   max-width: 100%;
 }
@@ -9,6 +15,7 @@ img {
 body {
   margin: 0;
   overflow-x: hidden;
+  font-family: Sansation, serif;
 }
 
 a,
