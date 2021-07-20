@@ -50,71 +50,83 @@ const DocumentsPage = () => {
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
-                    <Typography variant="h5" color="textPrimary">
-                      MSA
-                    </Typography>
-                    <Box py={3}>
-                      <Typography color="textPrimary">
-                        An agreement regarding the terms that will govern future
-                        transactions or future agreement
+                    <Box>
+                      <Typography variant="h5" color="textPrimary">
+                        MSA
                       </Typography>
+                      <Box py={3}>
+                        <Typography color="textPrimary">
+                          An agreement regarding the terms that will govern
+                          future transactions or future agreement
+                        </Typography>
+                      </Box>
                     </Box>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      component="a"
-                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Download
-                    </Button>
+                    <Box display="block">
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        component="a"
+                        href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        Download
+                      </Button>
+                    </Box>
                   </ItemBox>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
-                    <Typography variant="h5" color="textPrimary">
-                      MSA
-                    </Typography>
-                    <Box py={3}>
-                      <Typography color="textPrimary">
-                        An agreement regarding the terms that will govern future
-                        transactions or future agreement
+                    <Box>
+                      <Typography variant="h5" color="textPrimary">
+                        SOW
                       </Typography>
+                      <Box py={3}>
+                        <Typography color="textPrimary">
+                          The work requirements for a project along with its
+                          performance and design expectations
+                        </Typography>
+                      </Box>
                     </Box>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      component="a"
-                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Download
-                    </Button>
+                    <Box display="block">
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        component="a"
+                        href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        Download
+                      </Button>
+                    </Box>
                   </ItemBox>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
-                    <Typography variant="h5" color="textPrimary">
-                      MSA
-                    </Typography>
-                    <Box py={3}>
-                      <Typography color="textPrimary">
-                        An agreement regarding the terms that will govern future
-                        transactions or future agreement
+                    <Box>
+                      <Typography variant="h5" color="textPrimary">
+                        ABC Authorization
                       </Typography>
+                      <Box py={3}>
+                        <Typography color="textPrimary">
+                          Financial transaction agreements for members through
+                          ABC Financial
+                        </Typography>
+                      </Box>
                     </Box>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      component="a"
-                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Download
-                    </Button>
+                    <Box display="block">
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        component="a"
+                        href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        Download
+                      </Button>
+                    </Box>
                   </ItemBox>
                 </Grid>
               </Grid>

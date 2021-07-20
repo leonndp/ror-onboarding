@@ -60,12 +60,19 @@ const SupportPage = () => {
               <Tab label="Media & Analytics" />
               <Tab label="Data Integration" />
             </Tabs>
-            <Box py={5}>
-              <Button color="primary" size="large" variant="contained">
-                Contact Support
-              </Button>
-            </Box>
+
             <Box hidden={activeTab !== 0}>
+              <Box py={5}>
+                <Button
+                  component="a"
+                  href="mailto:crunch@rorpartners.com?subject=Crunch | Account Team Message"
+                  color="primary"
+                  size="large"
+                  variant="contained"
+                >
+                  Contact Support
+                </Button>
+              </Box>
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6} md={4}>
                   <ProfileCard
@@ -106,6 +113,17 @@ const SupportPage = () => {
               </Grid>
             </Box>
             <Box hidden={activeTab !== 1}>
+              <Box py={5}>
+                <Button
+                  component="a"
+                  href="mailto:crunch@rorpartners.com?subject=Crunch | Account Team Message"
+                  color="primary"
+                  size="large"
+                  variant="contained"
+                >
+                  Contact Support
+                </Button>
+              </Box>
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6} md={4}>
                   <ProfileCard
@@ -212,6 +230,17 @@ const SupportPage = () => {
               </Grid>
             </Box>
             <Box hidden={activeTab !== 2}>
+              <Box py={5}>
+                <Button
+                  component="a"
+                  href="mailto:crunch@rorpartners.com?subject=Crunch | Account Team Message"
+                  color="primary"
+                  size="large"
+                  variant="contained"
+                >
+                  Contact Support
+                </Button>
+              </Box>
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6} md={4}>
                   <ProfileCard
