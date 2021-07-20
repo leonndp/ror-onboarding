@@ -63,10 +63,9 @@ const LoginPage = () => {
       <Layout drawerView="login">
         <div className={classes.root}>
           <Container className={classes.container} maxWidth="sm">
-            <Typography color="textPrimary" variant="h3">
+            <Typography color="textPrimary" variant="h4">
               Password protected site
             </Typography>
-            <h1>Log in</h1>
             <form
               method="post"
               onSubmit={event => {
@@ -83,7 +82,7 @@ const LoginPage = () => {
                     shrink: true,
                   }}
                   margin="normal"
-                  placeholder="Drop Down"
+                  placeholder="Enter access code"
                   type="password"
                   onChange={handleUpdate}
                   value={password}
