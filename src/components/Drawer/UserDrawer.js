@@ -35,8 +35,8 @@ const useStyles = makeStyles(theme => ({
     borderRight: "10px solid #5163AD",
   },
   container: {
-    paddingTop: "5rem",
-    paddingBottom: "5rem",
+    paddingTop: "2.5rem",
+    paddingBottom: "2.5rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
@@ -64,7 +64,7 @@ const Drawer = () => {
     >
       <Container className={classes.container} maxWidth="sm">
         <List>
-          <Box pb={5}>
+          <Box pb={5} display="flex" justifyContent="center">
             <Link to="/app/dashboard">
               <StaticImage src="../../images/ror_logo.png" />
             </Link>

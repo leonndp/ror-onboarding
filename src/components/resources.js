@@ -44,7 +44,7 @@ const ResourcesPage = () => {
       <Container className={classes.container} maxWidth="md">
         <Box textAlign="center">
           <Typography variant="h4" color="textPrimary">
-            Download ROR Agreements
+            Download ROR Resources
           </Typography>
           <Box py={7}>
             <Grid container spacing={5}>
@@ -73,11 +73,11 @@ const ResourcesPage = () => {
               <Grid item xs={12} sm={6}>
                 <ItemBox>
                   <Typography variant="h5" color="textPrimary">
-                    Presentation
+                    Org Chart
                   </Typography>
                   <Box py={3}>
                     <Typography color="textPrimary">
-                      Download and view the PowerPoint presentation
+                      Download and view the Crunch team Org chart
                     </Typography>
                   </Box>
                   <Button
