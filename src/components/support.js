@@ -56,9 +56,9 @@ const SupportPage = () => {
               textColor="primary"
               centered
             >
-              <Tab label="Account Team" />
-              <Tab label="Media & Analytics" />
-              <Tab label="Data Integration" />
+              <Tab label="Account Team" style={{ fontWeight: 700 }} />
+              <Tab label="Media & Analytics" style={{ fontWeight: 700 }} />
+              <Tab label="Data Integration" style={{ fontWeight: 700 }} />
             </Tabs>
 
             <Box hidden={activeTab !== 0}>
@@ -116,7 +116,7 @@ const SupportPage = () => {
               <Box py={5}>
                 <Button
                   component="a"
-                  href="mailto:crunch@rorpartners.com?subject=Crunch | Account Team Message"
+                  href="mailto:crunch@rorpartners.com?subject=Crunch | Media Team Message"
                   color="primary"
                   size="large"
                   variant="contained"
@@ -233,7 +233,7 @@ const SupportPage = () => {
               <Box py={5}>
                 <Button
                   component="a"
-                  href="mailto:crunch@rorpartners.com?subject=Crunch | Account Team Message"
+                  href="mailto:crunch@rorpartners.com?subject=Crunch | Data Team Message"
                   color="primary"
                   size="large"
                   variant="contained"

@@ -2,6 +2,15 @@
   font-family: Sansation;
   src: url(../fonts/sansation_regular-webfont.woff);
   /* src: url(../fonts/sansation_bold-webfont.woff); */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Sansation;
+  src: url(../fonts/sansation_bold-webfont.woff);
+  font-weight: 700;
+  font-style: normal;
 }
 
 img {

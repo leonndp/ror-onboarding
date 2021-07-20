@@ -51,7 +51,7 @@ const DocumentsPage = () => {
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
                     <Box>
-                      <Typography variant="h5" color="textPrimary">
+                      <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
                         MSA
                       </Typography>
                       <Box py={3}>
@@ -76,7 +76,7 @@ const DocumentsPage = () => {
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
                     <Box>
-                      <Typography variant="h5" color="textPrimary">
+                      <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
                         SOW
                       </Typography>
                       <Box py={3}>
@@ -101,7 +101,7 @@ const DocumentsPage = () => {
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
                     <Box>
-                      <Typography variant="h5"  color="textPrimary">
+                      <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
                         ABC Authorization
                       </Typography>
                       <Box py={3}>
