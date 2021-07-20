@@ -61,18 +61,16 @@ const DocumentsPage = () => {
                         </Typography>
                       </Box>
                     </Box>
-                    <Box display="block">
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        component="a"
-                        href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        Download
-                      </Button>
-                    </Box>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      component="a"
+                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Download
+                    </Button>
                   </ItemBox>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
@@ -88,24 +86,22 @@ const DocumentsPage = () => {
                         </Typography>
                       </Box>
                     </Box>
-                    <Box display="block">
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        component="a"
-                        href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        Download
-                      </Button>
-                    </Box>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      component="a"
+                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Download
+                    </Button>
                   </ItemBox>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
                     <Box>
-                      <Typography variant="h5" color="textPrimary">
+                      <Typography variant="h5"  color="textPrimary">
                         ABC Authorization
                       </Typography>
                       <Box py={3}>
@@ -115,18 +111,16 @@ const DocumentsPage = () => {
                         </Typography>
                       </Box>
                     </Box>
-                    <Box display="block">
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        component="a"
-                        href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        Download
-                      </Button>
-                    </Box>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      component="a"
+                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Download
+                    </Button>
                   </ItemBox>
                 </Grid>
               </Grid>
