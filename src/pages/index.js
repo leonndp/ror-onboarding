@@ -54,6 +54,7 @@ const IndexPage = () => {
     firstName: "",
     lastName: "",
     email: "",
+    title: "",
     gymAddress: "",
     gymCity: "",
     gymState: "",
@@ -133,12 +134,12 @@ const IndexPage = () => {
                 onChange={handleFormChange}
                 fullWidth
                 variant="filled"
-                label="Your Location or Ownership Group"
+                label="Ownership Group"
                 InputLabelProps={{
                   shrink: true,
                 }}
                 margin="normal"
-                placeholder="Enter Location or Group"
+                placeholder="Enter Ownership Group"
               />
               <TextField
                 name="firstName"
@@ -176,6 +177,18 @@ const IndexPage = () => {
                 margin="normal"
                 placeholder="Enter email"
               />
+              <TextField
+                name="title"
+                onChange={handleFormChange}
+                fullWidth
+                variant="filled"
+                label="Title"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+                placeholder="Enter title"
+              />
             </Box>
             <Box hidden={activeStep !== 2}>
               <TextField
@@ -183,19 +196,19 @@ const IndexPage = () => {
                 onChange={handleFormChange}
                 fullWidth
                 variant="filled"
-                label="Gym Location"
+                label="Main or Headquarter Address for the Ownership Group"
                 InputLabelProps={{
                   shrink: true,
                 }}
                 margin="normal"
-                placeholder="Enter Gym Address"
+                placeholder="Enter Address"
               />
               <TextField
                 name="gymCity"
                 onChange={handleFormChange}
                 fullWidth
                 variant="filled"
-                label="Gym City"
+                label="Main or Headquarter City for the Ownership Group"
                 InputLabelProps={{
                   shrink: true,
                 }}
@@ -207,7 +220,7 @@ const IndexPage = () => {
                 onChange={handleFormChange}
                 fullWidth
                 variant="filled"
-                label="Location ID"
+                label="Main or Headquarter State for the Ownership Group"
                 InputLabelProps={{
                   shrink: true,
                 }}
@@ -219,12 +232,12 @@ const IndexPage = () => {
                 onChange={handleFormChange}
                 fullWidth
                 variant="filled"
-                label="Location ID"
+                label="Number of Locations"
                 InputLabelProps={{
                   shrink: true,
                 }}
                 margin="normal"
-                placeholder="Enter id"
+                placeholder="Enter location ID"
               />
             </Box>
             <Box hidden={activeStep !== 3}>
@@ -242,11 +255,13 @@ const IndexPage = () => {
               />
               <Box clone width="100%">
                 <FormControl component="fieldset">
-                  <FormLabel component="legend">
-                    Your Current Services
-                  </FormLabel>
+                  <Box mt={2}>
+                    <FormLabel component="legend">
+                      Your Current Services
+                    </FormLabel>
+                  </Box>
                   <Grid container spacing={5} justify="space-between">
-                    <Grid item>
+                    <Grid item xs={12} md={6}>
                       <FormGroup>
                         <FormControlLabel
                           name="paidServices"
@@ -265,10 +280,11 @@ const IndexPage = () => {
                           onChange={handleCheckboxChange}
                           control={<Checkbox />}
                           label="Traditional Media"
+                          color="primary"
                         />
                       </FormGroup>
                     </Grid>
-                    <Grid item>
+                    <Grid item xs={12} md={6}>
                       <FormGroup>
                         <FormControlLabel
                           name="digitalDisplay"
@@ -293,7 +309,7 @@ const IndexPage = () => {
                 You're All Set!
               </Typography>
               <Typography>
-                Click the link below and enter your generated access code
+                Click the button below and enter the access code
               </Typography>
               <Box p={2} my={3} bgcolor="common.white">
                 <Typography color="secondary" variant="h2">
@@ -310,7 +326,7 @@ const IndexPage = () => {
                 Get Started
               </Button>
             </Box>
-            <Box hidden={activeStep === 4}>
+            <Box hidden={activeStep === 4} mt={2}>
               <MobileStepper
                 variant="progress"
                 LinearProgressProps={{
