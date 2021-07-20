@@ -72,8 +72,8 @@ const Drawer = () => {
 
           <ListItem
             button
-            component="a"
-            href="/app/support"
+            component={Link}
+            to="/app/support"
             /* onClick={e => {
               navigate("/support")
             }} */
@@ -91,8 +91,8 @@ const Drawer = () => {
           </ListItem>
           <ListItem
             button
-            component="a"
-            href="/app/documents"
+            component={Link}
+            to="/app/documents"
             /* onClick={e => {
               navigate("/support")
             }} */
@@ -109,8 +109,8 @@ const Drawer = () => {
           </ListItem>
           <ListItem
             button
-            component="a"
-            href="/app/resources"
+            component={Link}
+            to="/app/resources"
             /* onClick={e => {
               navigate("/support")
             }} */

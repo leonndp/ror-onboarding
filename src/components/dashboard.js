@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
@@ -51,8 +52,8 @@ const DashboardPage = () => {
             <Grid container spacing={5}>
               <Grid item xs={12} md={6}>
                 <ButtonBase
-                  component="a"
-                  href="/app/documents"
+                  component={Link}
+                  to="/app/documents"
                   classes={{ root: classes.button }}
                 >
                   <ItemBox>
@@ -71,8 +72,8 @@ const DashboardPage = () => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <ButtonBase
-                  component="a"
-                  href="/app/reference"
+                  component={Link}
+                  to="/app/resources"
                   classes={{ root: classes.button }}
                 >
                   <ItemBox>
