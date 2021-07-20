@@ -57,16 +57,18 @@ const DashboardPage = () => {
                   classes={{ root: classes.button }}
                 >
                   <ItemBox>
-                    <StaticImage
-                      src="../images/star-icon.png"
-                      className={classes.image}
-                    />
-                    <Typography color="primary" gutterBottom variant="h3">
-                      Ready to
-                      <br />
-                      Get Started
-                    </Typography>
-                    <DoubleArrowIcon color="primary" />
+                    <Box textAlign="center">
+                      <StaticImage
+                        src="../images/star-icon.png"
+                        className={classes.image}
+                      />
+                      <Typography color="primary" gutterBottom variant="h3">
+                        Ready to
+                        <br />
+                        Get Started
+                      </Typography>
+                      <DoubleArrowIcon color="primary" />
+                    </Box>
                   </ItemBox>
                 </ButtonBase>
               </Grid>
@@ -77,16 +79,18 @@ const DashboardPage = () => {
                   classes={{ root: classes.button }}
                 >
                   <ItemBox>
-                    <StaticImage
-                      src="../images/megaphone-icon.png"
-                      className={classes.image}
-                    />
-                    <Typography color="primary" gutterBottom variant="h3">
-                      Learn
-                      <br />
-                      More
-                    </Typography>
-                    <DoubleArrowIcon color="primary" />
+                    <Box textAlign="center">
+                      <StaticImage
+                        src="../images/megaphone-icon.png"
+                        className={classes.image}
+                      />
+                      <Typography color="primary" gutterBottom variant="h3">
+                        Learn
+                        <br />
+                        More
+                      </Typography>
+                      <DoubleArrowIcon color="primary" />
+                    </Box>
                   </ItemBox>
                 </ButtonBase>
               </Grid>
