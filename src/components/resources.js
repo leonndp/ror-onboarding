@@ -62,7 +62,7 @@ const ResourcesPage = () => {
                     variant="contained"
                     color="primary"
                     component="a"
-                    href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                    href="https://rorpartners.com/docs/ror_crunch_pitchdeck.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
@@ -84,7 +84,7 @@ const ResourcesPage = () => {
                     variant="contained"
                     color="primary"
                     component="a"
-                    href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                    href="https://rorpartners.com/docs/ror_org_chart.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
                   >

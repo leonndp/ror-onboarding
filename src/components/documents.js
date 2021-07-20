@@ -65,7 +65,7 @@ const DocumentsPage = () => {
                       variant="contained"
                       color="primary"
                       component="a"
-                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                      href="https://rorpartners.com/docs/ror_msa_document.pdf"
                       target="_blank"
                       rel="noreferrer noopener"
                     >
@@ -90,7 +90,7 @@ const DocumentsPage = () => {
                       variant="contained"
                       color="primary"
                       component="a"
-                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                      href="https://rorpartners.com/docs/ror_sow_document.pdf"
                       target="_blank"
                       rel="noreferrer noopener"
                     >
@@ -115,7 +115,7 @@ const DocumentsPage = () => {
                       variant="contained"
                       color="primary"
                       component="a"
-                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                      href="https://rorpartners.com/docs/ror_abc_agreement_document.pdf"
                       target="_blank"
                       rel="noreferrer noopener"
                     >
