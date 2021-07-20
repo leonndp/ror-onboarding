@@ -17,8 +17,8 @@ import {
 import { makeStyles } from "@material-ui/core/styles"
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow"
 
-import ItemBox from "./../components/ItemBox"
-import Layout from "./../components/layout"
+import ItemBox from "./ItemBox"
+import Layout from "./layout"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 const DashboardPage = () => {
   const classes = useStyles()
   return (
-    <Layout>
+    <>
       <div className={classes.root}>
         <Container className={classes.container} maxWidth="md">
           <Box textAlign="center">
@@ -52,7 +52,7 @@ const DashboardPage = () => {
               <Grid item xs={12} md={6}>
                 <ButtonBase
                   component="a"
-                  href="/documents"
+                  href="/app/documents"
                   classes={{ root: classes.button }}
                 >
                   <ItemBox>
@@ -72,7 +72,7 @@ const DashboardPage = () => {
               <Grid item xs={12} md={6}>
                 <ButtonBase
                   component="a"
-                  href="/reference"
+                  href="/app/reference"
                   classes={{ root: classes.button }}
                 >
                   <ItemBox>
@@ -93,7 +93,7 @@ const DashboardPage = () => {
           </Box>
         </Container>
       </div>
-    </Layout>
+    </>
   )
 }
 

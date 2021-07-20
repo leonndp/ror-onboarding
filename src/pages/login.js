@@ -1,6 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+
+import { handleLogin, isLoggedIn } from "../services/auth"
 
 import {
   Box,
@@ -17,6 +19,7 @@ import { useTheme, makeStyles } from "@material-ui/core/styles"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { navigate } from "@reach/router"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -34,14 +37,23 @@ const useStyles = makeStyles(theme => ({
 
 const LoginPage = () => {
   const theme = useTheme()
-  const [activeStep, setActiveStep] = React.useState(1)
+  const [password, setPassword] = useState("")
 
-  const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1)
+  useEffect(() => {
+
+    if (isLoggedIn()) {
+      console.log(true)
+      navigate("/app/dashboard")
+    }
+  }, [])
+
+  const handleUpdate = e => {
+    setPassword(e.target.value)
   }
 
-  const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1)
+  const handleSubmit = e => {
+    e.preventDefault()
+    handleLogin(password)
   }
 
   const classes = useStyles()
@@ -54,22 +66,38 @@ const LoginPage = () => {
             <Typography color="textPrimary" variant="h3">
               Password protected site
             </Typography>
-            <Box my={3}>
-              <TextField
-                fullWidth
-                variant="filled"
-                label="Please enter your password to get access"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Drop Down"
-                type="password"
-              />
-            </Box>
-            <Button color="primary" variant="contained" size="large">
-              Submit
-            </Button>
+            <h1>Log in</h1>
+            <form
+              method="post"
+              onSubmit={event => {
+                handleSubmit(event)
+                navigate(`/app/dashboard`)
+              }}
+            >
+              <Box my={3}>
+                <TextField
+                  fullWidth
+                  variant="filled"
+                  label="Please enter your password to get access"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  margin="normal"
+                  placeholder="Drop Down"
+                  type="password"
+                  onChange={handleUpdate}
+                  value={password}
+                />
+              </Box>
+              <Button
+                color="primary"
+                variant="contained"
+                size="large"
+                type="submit"
+              >
+                Submit
+              </Button>
+            </form>
           </Container>
         </div>
       </Layout>

@@ -65,7 +65,7 @@ const Drawer = () => {
       <Container className={classes.container} maxWidth="sm">
         <List>
           <Box pb={5}>
-            <Link to="/dashboard">
+            <Link to="/app/dashboard">
               <StaticImage src="../../images/ror_logo.png" />
             </Link>
           </Box>
@@ -73,7 +73,7 @@ const Drawer = () => {
           <ListItem
             button
             component="a"
-            href="/support"
+            href="/app/support"
             /* onClick={e => {
               navigate("/support")
             }} */
@@ -92,7 +92,7 @@ const Drawer = () => {
           <ListItem
             button
             component="a"
-            href="/documents"
+            href="/app/documents"
             /* onClick={e => {
               navigate("/support")
             }} */
@@ -110,7 +110,7 @@ const Drawer = () => {
           <ListItem
             button
             component="a"
-            href="/resources"
+            href="/app/resources"
             /* onClick={e => {
               navigate("/support")
             }} */

@@ -21,8 +21,8 @@ import {
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@material-ui/icons"
 import { useTheme, makeStyles } from "@material-ui/core/styles"
 
-import Layout from "./../components/layout"
-import Seo from "./../components/seo"
+import Layout from "./layout"
+import Seo from "./seo"
 
 const useStyles = makeStyles(theme => ({
   root: {

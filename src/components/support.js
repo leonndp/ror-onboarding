@@ -18,8 +18,8 @@ import {
 import { makeStyles } from "@material-ui/core/styles"
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow"
 
-import ProfileCard from "./../components/ProfileCard"
-import Layout from "./../components/layout"
+import ProfileCard from "./ProfileCard"
+import Layout from "./layout"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,7 +45,7 @@ const SupportPage = () => {
   const classes = useStyles()
 
   return (
-    <Layout>
+    <>
       <div className={classes.root}>
         <Container className={classes.container}>
           <Box textAlign="center">
@@ -254,7 +254,7 @@ const SupportPage = () => {
           </Box>
         </Container>
       </div>
-    </Layout>
+    </>
   )
 }
 

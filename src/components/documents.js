@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
@@ -19,8 +18,8 @@ import {
 import { makeStyles } from "@material-ui/core/styles"
 import DoubleArrowIcon from "@material-ui/icons/DoubleArrow"
 
-import ItemBox from "./../components/ItemBox"
-import Layout from "./../components/layout"
+import ItemBox from "./ItemBox"
+import Layout from "./layout"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,27 +35,28 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ResourcesPage = () => {
+const DocumentsPage = () => {
   const classes = useStyles()
 
   return (
-    <Layout>
+    <>
       <div className={classes.root}>
-        <Container className={classes.container} maxWidth="md">
+        <Container className={classes.container}>
           <Box textAlign="center">
             <Typography variant="h4" color="textPrimary">
               Download ROR Agreements
             </Typography>
             <Box py={7}>
               <Grid container spacing={5}>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
                     <Typography variant="h5" color="textPrimary">
-                      Presentation
+                      MSA
                     </Typography>
                     <Box py={3}>
                       <Typography color="textPrimary">
-                        Download and view the PowerPoint presentation
+                        An agreement regarding the terms that will govern future
+                        transactions or future agreement
                       </Typography>
                     </Box>
                     <Button
@@ -71,14 +71,38 @@ const ResourcesPage = () => {
                     </Button>
                   </ItemBox>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
                     <Typography variant="h5" color="textPrimary">
-                      Presentation
+                      MSA
                     </Typography>
                     <Box py={3}>
                       <Typography color="textPrimary">
-                        Download and view the PowerPoint presentation
+                        An agreement regarding the terms that will govern future
+                        transactions or future agreement
+                      </Typography>
+                    </Box>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      component="a"
+                      href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Download
+                    </Button>
+                  </ItemBox>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ItemBox>
+                    <Typography variant="h5" color="textPrimary">
+                      MSA
+                    </Typography>
+                    <Box py={3}>
+                      <Typography color="textPrimary">
+                        An agreement regarding the terms that will govern future
+                        transactions or future agreement
                       </Typography>
                     </Box>
                     <Button
@@ -95,11 +119,17 @@ const ResourcesPage = () => {
                 </Grid>
               </Grid>
             </Box>
+            <Typography color="textPrimary">
+              Download, sign, and send completed documents to{" "}
+              <Box component="span" fontWeight="700">
+                crunch@rorpartners.com
+              </Box>
+            </Typography>
           </Box>
         </Container>
       </div>
-    </Layout>
+    </>
   )
 }
 
-export default ResourcesPage
+export default DocumentsPage

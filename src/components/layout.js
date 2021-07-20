@@ -20,6 +20,10 @@ const useStyles = makeStyles(theme => ({
     minHeight: "100vh",
     display: "flex",
     backgroundColor: "#E5E5E5",
+    width: "100%",
+    "& div:nth-child(2)": {
+      width: "100%",
+    },
   },
 }))
 
