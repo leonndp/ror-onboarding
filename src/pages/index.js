@@ -60,6 +60,7 @@ const IndexPage = () => {
     gymState: "",
     gymLocationId: "",
     budget: "",
+    number: "",
     currentServices: {},
   })
   const [checkboxData, setCheckboxData] = useState({})
@@ -178,6 +179,18 @@ const IndexPage = () => {
                 placeholder="Enter email"
               />
               <TextField
+                name="number"
+                onChange={handleFormChange}
+                fullWidth
+                variant="filled"
+                label="Contact Number"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+                placeholder="Enter Contact Number"
+              />
+              <TextField
                 name="title"
                 onChange={handleFormChange}
                 fullWidth
@@ -257,7 +270,7 @@ const IndexPage = () => {
                 <FormControl component="fieldset">
                   <Box mt={2}>
                     <FormLabel component="legend">
-                      Your Current Services
+                      Services You're Interested In
                     </FormLabel>
                   </Box>
                   <Grid container spacing={5} justify="space-between">
