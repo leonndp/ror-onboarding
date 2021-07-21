@@ -129,7 +129,7 @@ const Drawer = () => {
         </List>
         <Button color="primary" variant="contained" size="large">
           <Link
-            href="https://link.queup.com/widget/appointment/service/kent?group=queup"
+            href="https://rorpartners.com/schedule/"
             target="_blank"
             rel="noreferrer noopener"
             style={{ color: "white" }}
