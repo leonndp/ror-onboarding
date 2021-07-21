@@ -98,7 +98,6 @@ const IndexPage = () => {
         "https://09252ab23cd6b265b7f9b4fbc8c30cf5.m.pipedream.net",
         formData
       )
-
       console.log("Success!")
     } catch (err) {
       console.log(err)
@@ -307,14 +306,21 @@ const IndexPage = () => {
             <Box hidden={activeStep === 4}>
               <MobileStepper
                 variant="progress"
-                LinearProgressProps={{
+                /* LinearProgressProps={{
                   color: "secondary",
-                }}
+                  style: {
+                    marginLeft: "1rem !important",
+                  },
+                }} */
                 steps={4}
                 position="static"
                 activeStep={activeStep}
                 nextButton={
-                  <Button size="small" onClick={handleNext}>
+                  <Button
+                    size="small"
+                    onClick={handleNext}
+                    style={{ marginLeft: "1rem" }}
+                  >
                     {activeStep === 3 ? "Submit" : "Next"}
                     {theme.direction === "rtl" ? (
                       <KeyboardArrowLeft />

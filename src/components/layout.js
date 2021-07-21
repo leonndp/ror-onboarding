@@ -1,6 +1,5 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import { Container } from "@material-ui/core"
 import {
@@ -14,6 +13,8 @@ import Header from "./header"
 import "./layout.css"
 
 import theme from "./../theme"
+
+import Favicon from "../images/favicon.png"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,6 +33,11 @@ const Layout = ({ children, drawerView = "user" }) => {
   return (
     <ThemeProvider theme={createTheme(theme)}>
       <>
+        <Helmet>
+          <title>ROR Onboarding</title>
+          <link rel="shortcut icon" type="image/png" href={Favicon} />
+        </Helmet>
+
         <Header />
         <div className={classes.root}>
           <Drawer drawerView={drawerView} />
