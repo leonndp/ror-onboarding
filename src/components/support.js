@@ -70,10 +70,34 @@ const SupportPage = () => {
                   size="large"
                   variant="contained"
                 >
-                  Contact Support
+                  Contact Us With Questions
                 </Button>
               </Box>
               <Grid container spacing={5}>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
+                    name="Mike Carney"
+                    description="SVP & Chief Client Officer"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/mike-carney.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
+                    name="Kent Lehnhoff"
+                    description="VP, Business Development"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/ken-lehnhoff.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <ProfileCard
                     name="Jenn Galantini"
@@ -110,6 +134,18 @@ const SupportPage = () => {
                     />
                   </ProfileCard>
                 </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
+                    name="Emily Royster"
+                    description="Account Executive"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/emily-royster.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
               </Grid>
             </Box>
             <Box hidden={activeTab !== 1}>
@@ -121,7 +157,7 @@ const SupportPage = () => {
                   size="large"
                   variant="contained"
                 >
-                  Contact Support
+                  Contact Us With Questions
                 </Button>
               </Box>
               <Grid container spacing={5}>
@@ -139,8 +175,20 @@ const SupportPage = () => {
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
                   <ProfileCard
+                    name="Courtney Conroy"
+                    description="VP, Digital Media"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/courtney-conroy.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
                     name="Paul Reyes"
-                    description="Director, Social Media"
+                    description="Director Social Media"
                   >
                     <StaticImage
                       className={classes.image}
@@ -152,7 +200,7 @@ const SupportPage = () => {
                 <Grid item xs={12} sm={6} md={4}>
                   <ProfileCard
                     name="Jeff Silva"
-                    description="Director, Digital Media"
+                    description="Director Digital Media"
                   >
                     <StaticImage
                       className={classes.image}
@@ -162,10 +210,13 @@ const SupportPage = () => {
                   </ProfileCard>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
-                  <ProfileCard name="Melissa Simon" description="Paid Social">
+                  <ProfileCard
+                    name="Rebecca Buscemi"
+                    description="Sr. Digital Media Specialist, Social Media"
+                  >
                     <StaticImage
                       className={classes.image}
-                      src={"./../images/headshots/melissa-simon.png"}
+                      src={"./../images/headshots/rebecca-buscemi.png"}
                       width={100}
                     />
                   </ProfileCard>
@@ -173,20 +224,11 @@ const SupportPage = () => {
                 <Grid item xs={12} sm={6} md={4}>
                   <ProfileCard
                     name="Lee Ann Benson"
-                    description="Directorof Analytics"
+                    description="Director of Analytics"
                   >
                     <StaticImage
                       className={classes.image}
                       src={"./../images/headshots/lee-benson.png"}
-                      width={100}
-                    />
-                  </ProfileCard>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                  <ProfileCard name="Travis Cooper" description="Paid Search">
-                    <StaticImage
-                      className={classes.image}
-                      src={"./../images/headshots/travis-cooper.png"}
                       width={100}
                     />
                   </ProfileCard>
@@ -238,18 +280,18 @@ const SupportPage = () => {
                   size="large"
                   variant="contained"
                 >
-                  Contact Support
+                  Contact Us With Questions
                 </Button>
               </Box>
               <Grid container spacing={5}>
-                <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                   <ProfileCard
-                    name="Jamie Zapko"
-                    description="SVP, Chief Data Officer"
+                    name="Tom Lanahan"
+                    description="SVP & Chief Operating Officer"
                   >
                     <StaticImage
                       className={classes.image}
-                      src={"./../images/headshots/jamie-zapko.png"}
+                      src={"./../images/headshots/tom-lanahan.png"}
                       width={100}
                     />
                   </ProfileCard>
@@ -257,7 +299,7 @@ const SupportPage = () => {
                 <Grid item xs={12} sm={6} md={4}>
                   <ProfileCard
                     name="Ryan Lapcevic"
-                    description="Principal Engineering"
+                    description="Principal Engineer"
                   >
                     <StaticImage
                       className={classes.image}
@@ -274,6 +316,78 @@ const SupportPage = () => {
                     <StaticImage
                       className={classes.image}
                       src={"./../images/headshots/ursula-amato.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
+                    name="Akhil Manchikanti"
+                    description="Software Engineer"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/akhil-manchikanti.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
+                    name="John Hayes"
+                    description="Software Engineer"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/john-hayes.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
+                    name="Jennifer Schmidt"
+                    description="IT Administrator"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/jennife-schmidt.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
+                    name="Andrew Studer"
+                    description="Jr. Software Engineer"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/andre-studer.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
+                    name="Kaitlin Cooley"
+                    description="Data Production Manager"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/kaitli-cooley.png"}
+                      width={100}
+                    />
+                  </ProfileCard>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <ProfileCard
+                    name="Dom White"
+                    description="Data Specialist"
+                  >
+                    <StaticImage
+                      className={classes.image}
+                      src={"./../images/headshots/dom-white.png"}
                       width={100}
                     />
                   </ProfileCard>
