@@ -44,13 +44,13 @@ const ResourcesPage = () => {
       <Container className={classes.container} maxWidth="md">
         <Box textAlign="center">
           <Typography variant="h4" color="textPrimary">
-            Download ROR Agreements
+            Download ROR Resources
           </Typography>
           <Box py={7}>
             <Grid container spacing={5}>
               <Grid item xs={12} sm={6}>
                 <ItemBox>
-                  <Typography variant="h5" color="textPrimary">
+                  <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
                     Presentation
                   </Typography>
                   <Box py={3}>
@@ -62,7 +62,7 @@ const ResourcesPage = () => {
                     variant="contained"
                     color="primary"
                     component="a"
-                    href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                    href="https://rorpartners.com/docs/ror_crunch_pitchdeck.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
@@ -72,19 +72,19 @@ const ResourcesPage = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <ItemBox>
-                  <Typography variant="h5" color="textPrimary">
-                    Presentation
+                  <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
+                    Org Chart
                   </Typography>
                   <Box py={3}>
                     <Typography color="textPrimary">
-                      Download and view the PowerPoint presentation
+                      Download and view the Crunch team Org chart
                     </Typography>
                   </Box>
                   <Button
                     variant="contained"
                     color="primary"
                     component="a"
-                    href="https://queup.s3.us-west-1.amazonaws.com/ror/documents/msa_sow_document.pdf"
+                    href="https://rorpartners.com/docs/ror_org_chart.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
