@@ -11,6 +11,7 @@ import {
   Drawer,
   Grid,
   MobileStepper,
+  Snackbar,
   TextField,
   Typography,
 } from "@material-ui/core"
@@ -38,9 +39,9 @@ const useStyles = makeStyles(theme => ({
 const LoginPage = () => {
   const theme = useTheme()
   const [password, setPassword] = useState("")
+  const [error, setError] = useState(false)
 
   useEffect(() => {
-
     if (isLoggedIn()) {
       console.log(true)
       navigate("/app/dashboard")
@@ -53,7 +54,9 @@ const LoginPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    handleLogin(password)
+    if (!handleLogin(password)) {
+      setError(true)
+    }
   }
 
   const classes = useStyles()
@@ -66,6 +69,12 @@ const LoginPage = () => {
             <Typography color="textPrimary" variant="h4">
               Password protected site
             </Typography>
+            <Snackbar
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+              open={error}
+              onClose={() => setError(false)}
+              message="Incorrect Password"
+            />
             <form
               method="post"
               onSubmit={event => {
