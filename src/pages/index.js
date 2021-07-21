@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { Formik, Form, Field } from "formik"
-import { TextField } from "formik-material-ui"
+import { CheckboxWithLabel, TextField } from "formik-material-ui"
 import { StaticImage } from "gatsby-plugin-image"
 import axios from "axios"
 
@@ -51,73 +51,8 @@ const IndexPage = () => {
   const theme = useTheme()
   const [activeStep, setActiveStep] = useState(1)
   const [resStatus, setResStatus] = useState({})
-  const [formData, setFormData] = useState({
-    ownershipGroup: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-    gymAddress: "",
-    gymCity: "",
-    gymState: "",
-    gymLocationId: "",
-    budget: "",
-    /* currentServices: {}, */
-  })
-  const [checkboxData, setCheckboxData] = useState({})
-
-  useEffect(() => {
-    console.log(formData)
-  }, [formData])
-
-  useEffect(() => {
-    setFormData({
-      ...formData,
-      currentServices: {
-        ...checkboxData,
-      },
-    })
-  }, [checkboxData])
-
-  const handleFormChange = e => {
-    const value = e.target.value
-    setFormData({
-      ...formData,
-      [e.target.name]: value,
-    })
-  }
-
-  const handleCheckboxChange = e => {
-    const value = e.target.checked
-    setCheckboxData({
-      ...checkboxData,
-      [e.target.name]: value,
-    })
-  }
-
-  const handleSubmit = async () => {
-    try {
-      const res = await axios.post(
-        "https://09252ab23cd6b265b7f9b4fbc8c30cf5.m.pipedream.net",
-        formData
-      )
-      setResStatus({
-        status: res.status,
-        severity: "success",
-        message: "Success! Your contact details have been sent.",
-      })
-    } catch (err) {
-      setResStatus({
-        status: err.error,
-        severity: "error",
-        message: "An error occurred while processing your request.",
-      })
-    }
-  }
 
   const handleNext = () => {
-    if (activeStep === 3) {
-      handleSubmit()
-    }
     setActiveStep(prevActiveStep => prevActiveStep + 1)
   }
 
@@ -147,12 +82,12 @@ const IndexPage = () => {
                 gymState: "",
                 gymLocationId: "",
                 budget: "",
-                currentServices: {},
+                services: [],
               }}
               validate={values => {
                 const errors = {}
                 Object.keys(values).forEach(value => {
-                  if (!values[value] && value !== "currentServices") {
+                  if (!values[value] && value !== "services") {
                     errors[value] = "Required"
                   }
                 })
@@ -169,6 +104,7 @@ const IndexPage = () => {
                     "https://09252ab23cd6b265b7f9b4fbc8c30cf5.m.pipedream.net",
                     values
                   )
+                  console.log(values)
                   setResStatus({
                     status: res.status,
                     severity: "success",
@@ -185,7 +121,6 @@ const IndexPage = () => {
             >
               {({ submitForm, isSubmitting, errors }) => (
                 <Form>
-                  {console.log(errors)}
                   <Box hidden={activeStep !== 1}>
                     <Field
                       name="ownershipGroup"
@@ -299,7 +234,7 @@ const IndexPage = () => {
                       margin="normal"
                       placeholder="Enter Budget"
                     />
-                    {/* <Box clone width="100%">
+                    <Box clone width="100%">
                       <FormControl component="fieldset">
                         <FormLabel component="legend">
                           Your Current Services
@@ -307,45 +242,55 @@ const IndexPage = () => {
                         <Grid container spacing={5} justify="space-between">
                           <Grid item>
                             <FormGroup>
-                              <FormControlLabel
-                                name="paidServices"
-                                onChange={handleCheckboxChange}
+                              <Field
+                                name="services"
+                                component={CheckboxWithLabel}
                                 control={<Checkbox />}
-                                label="Paid Services"
+                                Label={{ label: "Paid Services" }}
+                                type="checkbox"
+                                value="Paid Services"
                               />
-                              <FormControlLabel
-                                name="paidSearch"
-                                onChange={handleCheckboxChange}
+                              <Field
+                                name="services"
+                                component={CheckboxWithLabel}
                                 control={<Checkbox />}
-                                label="Paid Search"
+                                Label={{ label: "Paid Search" }}
+                                type="checkbox"
+                                value="Paid Search"
                               />
-                              <FormControlLabel
-                                name="traditionalMedia"
-                                onChange={handleCheckboxChange}
+                              <Field
+                                name="services"
+                                component={CheckboxWithLabel}
                                 control={<Checkbox />}
-                                label="Traditional Media"
+                                Label={{ label: "Traditional Media" }}
+                                type="checkbox"
+                                value="Traditional Media"
                               />
                             </FormGroup>
                           </Grid>
                           <Grid item>
                             <FormGroup>
-                              <FormControlLabel
-                                name="digitalDisplay"
-                                onChange={handleCheckboxChange}
+                              <Field
+                                name="services"
+                                component={CheckboxWithLabel}
                                 control={<Checkbox />}
-                                label="Digital Display / OLV"
+                                Label={{ label: "Digital Display / OLV" }}
+                                type="checkbox"
+                                value="Digital Display / OLV"
                               />
-                              <FormControlLabel
-                                name="acquisitonEmail"
-                                onChange={handleCheckboxChange}
+                              <Field
+                                name="services"
+                                component={CheckboxWithLabel}
                                 control={<Checkbox />}
-                                label="Acquisition Email"
+                                Label={{ label: "Acquisition Email" }}
+                                type="checkbox"
+                                value="Acquisition Email"
                               />
                             </FormGroup>
                           </Grid>
                         </Grid>
                       </FormControl>
-                    </Box> */}
+                    </Box>
                   </Box>
                   <Box hidden={activeStep === 4}>
                     <MobileStepper
@@ -362,7 +307,12 @@ const IndexPage = () => {
                       nextButton={
                         <Button
                           size="small"
-                          onClick={handleNext}
+                          onClick={e => {
+                            if (activeStep === 3) {
+                              submitForm(e)
+                            }
+                            handleNext(e)
+                          }}
                           style={{ marginLeft: "1rem" }}
                           disabled={
                             activeStep === 3 &&
