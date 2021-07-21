@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import { Formik, Form, Field } from "formik"
+import { TextField } from "formik-material-ui"
 import { StaticImage } from "gatsby-plugin-image"
 import axios from "axios"
 
@@ -15,14 +17,13 @@ import {
   FormGroup,
   Grid,
   MobileStepper,
-  TextField,
+  /* TextField, */
   Typography,
 } from "@material-ui/core"
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@material-ui/icons"
 import { useTheme, makeStyles } from "@material-ui/core/styles"
 
 import Layout from "./../components/layout"
-import Seo from "./../components/seo"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -49,19 +50,18 @@ const useStyles = makeStyles(theme => ({
 const IndexPage = () => {
   const theme = useTheme()
   const [activeStep, setActiveStep] = useState(1)
+  const [resStatus, setResStatus] = useState({})
   const [formData, setFormData] = useState({
     ownershipGroup: "",
     firstName: "",
     lastName: "",
     email: "",
-    title: "",
     gymAddress: "",
     gymCity: "",
     gymState: "",
     gymLocationId: "",
     budget: "",
-    number: "",
-    currentServices: {},
+    /* currentServices: {}, */
   })
   const [checkboxData, setCheckboxData] = useState({})
 
@@ -100,10 +100,17 @@ const IndexPage = () => {
         "https://09252ab23cd6b265b7f9b4fbc8c30cf5.m.pipedream.net",
         formData
       )
-
-      console.log("Success!")
+      setResStatus({
+        status: res.status,
+        severity: "success",
+        message: "Success! Your contact details have been sent.",
+      })
     } catch (err) {
-      console.log(err)
+      setResStatus({
+        status: err.error,
+        severity: "error",
+        message: "An error occurred while processing your request.",
+      })
     }
   }
 
@@ -129,250 +136,281 @@ const IndexPage = () => {
             src="./../images/crunch-logo.png"
           />
           <Container className={classes.container} maxWidth="sm">
-            <Box hidden={activeStep !== 1}>
-              <TextField
-                name="ownershipGroup"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Ownership Group"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter Ownership Group"
-              />
-              <TextField
-                name="firstName"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="First Name"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter first name"
-              />
-              <TextField
-                name="lastName"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Last Name"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter last name"
-              />
-              <TextField
-                name="email"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Email"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter email"
-              />
-              <TextField
-                name="number"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Contact Number"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter Contact Number"
-              />
-              <TextField
-                name="title"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Title"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter title"
-              />
-            </Box>
-            <Box hidden={activeStep !== 2}>
-              <TextField
-                name="gymAddress"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Main or Headquarter Address for the Ownership Group"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter Address"
-              />
-              <TextField
-                name="gymCity"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Main or Headquarter City for the Ownership Group"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter city"
-              />
-              <TextField
-                name="gymState"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Main or Headquarter State for the Ownership Group"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter state"
-              />
-              <TextField
-                name="gymLocationId"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Number of Locations"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter location ID"
-              />
-            </Box>
-            <Box hidden={activeStep !== 3}>
-              <TextField
-                name="budget"
-                onChange={handleFormChange}
-                fullWidth
-                variant="filled"
-                label="Current Marketing Budget"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-                placeholder="Enter Budget"
-              />
-              <Box clone width="100%">
-                <FormControl component="fieldset">
-                  <Box mt={2}>
-                    <FormLabel component="legend">
-                      Services You're Interested In
-                    </FormLabel>
+            <Formik
+              initialValues={{
+                ownershipGroup: "",
+                firstName: "",
+                lastName: "",
+                email: "",
+                gymAddress: "",
+                gymCity: "",
+                gymState: "",
+                gymLocationId: "",
+                budget: "",
+                currentServices: {},
+              }}
+              validate={values => {
+                const errors = {}
+                Object.keys(values).forEach(value => {
+                  if (!values[value] && value !== "currentServices") {
+                    errors[value] = "Required"
+                  }
+                })
+                if (
+                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                ) {
+                  errors.email = "Invalid email address"
+                }
+                return errors
+              }}
+              onSubmit={async values => {
+                try {
+                  const res = await axios.post(
+                    "https://09252ab23cd6b265b7f9b4fbc8c30cf5.m.pipedream.net",
+                    values
+                  )
+                  setResStatus({
+                    status: res.status,
+                    severity: "success",
+                    message: "Success! Your contact details have been sent.",
+                  })
+                } catch (err) {
+                  setResStatus({
+                    status: err.error,
+                    severity: "error",
+                    message: "An error occurred while processing your request.",
+                  })
+                }
+              }}
+            >
+              {({ submitForm, isSubmitting, errors }) => (
+                <Form>
+                  {console.log(errors)}
+                  <Box hidden={activeStep !== 1}>
+                    <Field
+                      name="ownershipGroup"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Your Location or Ownership Group"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter Location or Group"
+                    />
+                    <Field
+                      name="firstName"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="First Name"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter first name"
+                    />
+                    <Field
+                      name="lastName"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Last Name"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter last name"
+                    />
+                    <Field
+                      name="email"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Email"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter email"
+                    />
                   </Box>
-                  <Grid container spacing={5} justify="space-between">
-                    <Grid item xs={12} md={6}>
-                      <FormGroup>
-                        <FormControlLabel
-                          name="paidServices"
-                          onChange={handleCheckboxChange}
-                          control={<Checkbox />}
-                          label="Paid Services"
-                        />
-                        <FormControlLabel
-                          name="paidSearch"
-                          onChange={handleCheckboxChange}
-                          control={<Checkbox />}
-                          label="Paid Search"
-                        />
-                        <FormControlLabel
-                          name="traditionalMedia"
-                          onChange={handleCheckboxChange}
-                          control={<Checkbox />}
-                          label="Traditional Media"
-                          color="primary"
-                        />
-                      </FormGroup>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <FormGroup>
-                        <FormControlLabel
-                          name="digitalDisplay"
-                          onChange={handleCheckboxChange}
-                          control={<Checkbox />}
-                          label="Digital Display / OLV"
-                        />
-                        <FormControlLabel
-                          name="acquisitonEmail"
-                          onChange={handleCheckboxChange}
-                          control={<Checkbox />}
-                          label="Acquisition Email"
-                        />
-                      </FormGroup>
-                    </Grid>
-                  </Grid>
-                </FormControl>
-              </Box>
-            </Box>
+                  <Box hidden={activeStep !== 2}>
+                    <Field
+                      name="gymAddress"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Gym Location"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter Gym Address"
+                    />
+                    <Field
+                      name="gymCity"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Gym City"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter city"
+                    />
+                    <Field
+                      name="gymState"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Location ID"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter state"
+                    />
+                    <Field
+                      name="gymLocationId"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Location ID"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter id"
+                    />
+                  </Box>
+                  <Box hidden={activeStep !== 3}>
+                    <Field
+                      name="budget"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Current Marketing Budget"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter Budget"
+                    />
+                    {/* <Box clone width="100%">
+                      <FormControl component="fieldset">
+                        <FormLabel component="legend">
+                          Your Current Services
+                        </FormLabel>
+                        <Grid container spacing={5} justify="space-between">
+                          <Grid item>
+                            <FormGroup>
+                              <FormControlLabel
+                                name="paidServices"
+                                onChange={handleCheckboxChange}
+                                control={<Checkbox />}
+                                label="Paid Services"
+                              />
+                              <FormControlLabel
+                                name="paidSearch"
+                                onChange={handleCheckboxChange}
+                                control={<Checkbox />}
+                                label="Paid Search"
+                              />
+                              <FormControlLabel
+                                name="traditionalMedia"
+                                onChange={handleCheckboxChange}
+                                control={<Checkbox />}
+                                label="Traditional Media"
+                              />
+                            </FormGroup>
+                          </Grid>
+                          <Grid item>
+                            <FormGroup>
+                              <FormControlLabel
+                                name="digitalDisplay"
+                                onChange={handleCheckboxChange}
+                                control={<Checkbox />}
+                                label="Digital Display / OLV"
+                              />
+                              <FormControlLabel
+                                name="acquisitonEmail"
+                                onChange={handleCheckboxChange}
+                                control={<Checkbox />}
+                                label="Acquisition Email"
+                              />
+                            </FormGroup>
+                          </Grid>
+                        </Grid>
+                      </FormControl>
+                    </Box> */}
+                  </Box>
+                  <Box hidden={activeStep === 4}>
+                    <MobileStepper
+                      variant="progress"
+                      /* LinearProgressProps={{
+                  color: "secondary",
+                  style: {
+                    marginLeft: "1rem !important",
+                  },
+                }} */
+                      steps={4}
+                      position="static"
+                      activeStep={activeStep}
+                      nextButton={
+                        <Button
+                          size="small"
+                          onClick={handleNext}
+                          style={{ marginLeft: "1rem" }}
+                          disabled={
+                            activeStep === 3 &&
+                            JSON.stringify(errors) !== JSON.stringify({})
+                          }
+                        >
+                          {activeStep === 3 ? "Submit" : "Next"}
+                          {theme.direction === "rtl" ? (
+                            <KeyboardArrowLeft />
+                          ) : (
+                            <KeyboardArrowRight />
+                          )}
+                        </Button>
+                      }
+                      backButton={
+                        <Button
+                          size="small"
+                          onClick={handleBack}
+                          disabled={activeStep === 1}
+                        >
+                          {theme.direction === "rtl" ? (
+                            <KeyboardArrowRight />
+                          ) : (
+                            <KeyboardArrowLeft />
+                          )}
+                          Back
+                        </Button>
+                      }
+                    />
+                  </Box>
+                </Form>
+              )}
+            </Formik>
             <Box textAlign="center" hidden={activeStep !== 4}>
               <Typography gutterBottom color="primary" variant="h2">
                 You're All Set!
               </Typography>
               <Typography>
-                Click the button below and enter the access code
+                Click the link below and enter your generated access code
               </Typography>
               <Box p={2} my={3} bgcolor="common.white">
                 <Typography color="secondary" variant="h2">
                   CRUNCH20
                 </Typography>
               </Box>
-              <Button
-                component={Link}
-                to="/login"
-                color="primary"
-                variant="contained"
-                size="large"
-              >
+              <Button color="primary" variant="contained" size="large">
                 Get Started
               </Button>
-            </Box>
-            <Box hidden={activeStep === 4} mt={2}>
-              <MobileStepper
-                variant="progress"
-                LinearProgressProps={{
-                  color: "secondary",
-                }}
-                steps={4}
-                position="static"
-                activeStep={activeStep}
-                nextButton={
-                  <Button size="small" onClick={handleNext}>
-                    {activeStep === 3 ? "Submit" : "Next"}
-                    {theme.direction === "rtl" ? (
-                      <KeyboardArrowLeft />
-                    ) : (
-                      <KeyboardArrowRight />
-                    )}
-                  </Button>
-                }
-                backButton={
-                  <Button
-                    size="small"
-                    onClick={handleBack}
-                    disabled={activeStep === 1}
-                  >
-                    {theme.direction === "rtl" ? (
-                      <KeyboardArrowRight />
-                    ) : (
-                      <KeyboardArrowLeft />
-                    )}
-                    Back
-                  </Button>
-                }
-              />
             </Box>
           </Container>
         </div>
