@@ -35,8 +35,8 @@ const useStyles = makeStyles(theme => ({
     borderRight: "10px solid #5163AD",
   },
   container: {
-    paddingTop: "2.5rem",
-    paddingBottom: "2.5rem",
+    paddingTop: "5rem",
+    paddingBottom: "5rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
@@ -64,7 +64,7 @@ const Drawer = () => {
     >
       <Container className={classes.container} maxWidth="sm">
         <List>
-          <Box pb={5} display="flex" justifyContent="center">
+          <Box pb={5}>
             <Link to="/app/dashboard">
               <StaticImage src="../../images/ror_logo.png" />
             </Link>
@@ -129,7 +129,7 @@ const Drawer = () => {
         </List>
         <Button color="primary" variant="contained" size="large">
           <Link
-            href="https://rorpartners.com/schedule/"
+            href="https://link.queup.com/widget/appointment/service/kent?group=queup"
             target="_blank"
             rel="noreferrer noopener"
             style={{ color: "white" }}

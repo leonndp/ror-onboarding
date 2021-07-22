@@ -332,6 +332,7 @@ const IndexPage = () => {
                           size="small"
                           onClick={handleBack}
                           disabled={activeStep === 1}
+                          style={{ marginRight: "1rem" }}
                         >
                           {theme.direction === "rtl" ? (
                             <KeyboardArrowRight />
