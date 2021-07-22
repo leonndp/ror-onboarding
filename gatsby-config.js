@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `ROR Partners`,
+    description: `Make relationships your business. Make your marekting ROR. We stand for Return-On-Relationships`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://rorpartners.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
