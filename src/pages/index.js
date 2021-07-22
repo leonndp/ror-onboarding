@@ -240,7 +240,7 @@ const IndexPage = () => {
                           Your Current Services
                         </FormLabel>
                         <Grid container spacing={5} justify="space-between">
-                          <Grid item>
+                          <Grid item xs>
                             <FormGroup>
                               <Field
                                 name="services"
@@ -268,7 +268,7 @@ const IndexPage = () => {
                               />
                             </FormGroup>
                           </Grid>
-                          <Grid item>
+                          <Grid item xs>
                             <FormGroup>
                               <Field
                                 name="services"
