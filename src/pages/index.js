@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
+import { isLoggedIn } from "../services/auth"
 import { Formik, Form, Field } from "formik"
 import { CheckboxWithLabel, TextField } from "formik-material-ui"
 import { StaticImage } from "gatsby-plugin-image"
@@ -52,6 +53,13 @@ const IndexPage = () => {
   const [activeStep, setActiveStep] = useState(1)
   const [resStatus, setResStatus] = useState({})
 
+  useEffect(() => {
+    if (isLoggedIn()) {
+      console.log(true)
+      navigate("/app/dashboard")
+    }
+  }, [])
+
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1)
   }
@@ -82,6 +90,7 @@ const IndexPage = () => {
                 gymState: "",
                 gymLocationId: "",
                 budget: "",
+                title: "",
                 services: [],
               }}
               validate={values => {
@@ -104,6 +113,7 @@ const IndexPage = () => {
                     "https://09252ab23cd6b265b7f9b4fbc8c30cf5.m.pipedream.net",
                     values
                   )
+                  console.log(values)
                   handleNext()
                   setResStatus({
                     status: res.status,
@@ -169,6 +179,18 @@ const IndexPage = () => {
                       }}
                       margin="normal"
                       placeholder="Enter email"
+                    />
+                    <Field
+                      name="title"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Title"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter Title"
                     />
                   </Box>
                   <Box hidden={activeStep !== 2}>
