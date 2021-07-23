@@ -127,16 +127,6 @@ const Drawer = () => {
             <ListItemText primary="Resources" />
           </ListItem>
         </List>
-        <Button color="primary" variant="contained" size="large">
-          <Link
-            href="https://link.queup.com/widget/appointment/service/kent?group=queup"
-            target="_blank"
-            rel="noreferrer noopener"
-            style={{ color: "white" }}
-          >
-            Schedule Appointment
-          </Link>
-        </Button>
       </Container>
     </MuiDrawer>
   )
