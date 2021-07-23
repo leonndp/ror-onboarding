@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import { AppBar, IconButton, Toolbar, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import MenuIcon from "@material-ui/icons/Menu"
 
-const useState = makeStyles(theme => ({
+import MobileDrawer from "./Drawer/MobileDrawer"
+
+const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "white",
     display: "none",
@@ -20,17 +22,22 @@ const useState = makeStyles(theme => ({
 }))
 
 const Header = () => {
-  const classes = useState()
+  const [open, setOpen] = useState(false)
+
+  const classes = useStyles()
 
   return (
-    <AppBar className={classes.root} position="fixed">
-      <Toolbar className={classes.toolbar}>
-        <StaticImage src="./../images/ror_logo-color.png" />
-        <IconButton color="primary" size="large">
-          <MenuIcon />
-        </IconButton>
-      </Toolbar>
-    </AppBar>
+    <>
+      <MobileDrawer open={open} onClose={e => setOpen(false)} />
+      <AppBar className={classes.root} position="fixed">
+        <Toolbar className={classes.toolbar}>
+          <StaticImage src="./../images/ror_logo-color.png" />
+          <IconButton color="primary" size="large" onClick={e => setOpen(true)}>
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    </>
   )
 }
 

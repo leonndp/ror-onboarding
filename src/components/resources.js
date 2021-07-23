@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     width: "100%",
     flexGrow: 1,
+    paddingTop: "3rem",
   },
   container: {
     margin: "3rem auto",
@@ -50,7 +51,11 @@ const ResourcesPage = () => {
             <Grid container spacing={5}>
               <Grid item xs={12} sm={6}>
                 <ItemBox>
-                  <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
+                  <Typography
+                    variant="h5"
+                    color="textPrimary"
+                    style={{ fontWeight: 700 }}
+                  >
                     Presentation
                   </Typography>
                   <Box py={3}>
@@ -72,7 +77,11 @@ const ResourcesPage = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <ItemBox>
-                  <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
+                  <Typography
+                    variant="h5"
+                    color="textPrimary"
+                    style={{ fontWeight: 700 }}
+                  >
                     Org Chart
                   </Typography>
                   <Box py={3}>

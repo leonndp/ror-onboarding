@@ -26,6 +26,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     width: "100%",
     flexGrow: 1,
+    paddingTop: "3rem",
   },
   container: {
     margin: "3rem auto",
@@ -51,7 +52,11 @@ const DocumentsPage = () => {
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
                     <Box>
-                      <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
+                      <Typography
+                        variant="h5"
+                        color="textPrimary"
+                        style={{ fontWeight: 700 }}
+                      >
                         MSA
                       </Typography>
                       <Box py={3}>
@@ -76,7 +81,11 @@ const DocumentsPage = () => {
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
                     <Box>
-                      <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
+                      <Typography
+                        variant="h5"
+                        color="textPrimary"
+                        style={{ fontWeight: 700 }}
+                      >
                         SOW
                       </Typography>
                       <Box py={3}>
@@ -101,7 +110,11 @@ const DocumentsPage = () => {
                 <Grid item xs={12} sm={6} md={4}>
                   <ItemBox>
                     <Box>
-                      <Typography variant="h5" color="textPrimary" style={{ fontWeight: 700 }}>
+                      <Typography
+                        variant="h5"
+                        color="textPrimary"
+                        style={{ fontWeight: 700 }}
+                      >
                         ABC Authorization
                       </Typography>
                       <Box py={3}>
