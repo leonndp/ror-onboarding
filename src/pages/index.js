@@ -104,7 +104,7 @@ const IndexPage = () => {
                     "https://09252ab23cd6b265b7f9b4fbc8c30cf5.m.pipedream.net",
                     values
                   )
-                  console.log(values)
+                  handleNext()
                   setResStatus({
                     status: res.status,
                     severity: "success",
@@ -310,8 +310,9 @@ const IndexPage = () => {
                           onClick={e => {
                             if (activeStep === 3) {
                               submitForm(e)
+                            } else {
+                              handleNext(e)
                             }
-                            handleNext(e)
                           }}
                           style={{ marginLeft: "1rem" }}
                           disabled={
