@@ -362,7 +362,7 @@ const IndexPage = () => {
               </Box>
               <Button
                 component={Link}
-                href="/app/login"
+                to="/app/login"
                 color="primary"
                 variant="contained"
                 size="large"
