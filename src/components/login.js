@@ -11,6 +11,7 @@ import {
   Drawer,
   Grid,
   MobileStepper,
+  Snackbar,
   TextField,
   Typography,
 } from "@material-ui/core"
@@ -38,6 +39,7 @@ const useStyles = makeStyles(theme => ({
 const LoginPage = () => {
   const theme = useTheme()
   const [password, setPassword] = useState("")
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     if (isLoggedIn()) {
@@ -52,54 +54,60 @@ const LoginPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    handleLogin(password)
+    if (!handleLogin(password)) {
+      setError(true)
+      return false
+    }
   }
 
   const classes = useStyles()
 
   return (
     <>
-      <Layout drawerView="login">
-        <div className={classes.root}>
-          <Container className={classes.container} maxWidth="sm">
-            <Typography color="textPrimary" variant="h3">
-              Password protected site
-            </Typography>
-            <h1>Log in</h1>
-            <form
-              method="post"
-              onSubmit={event => {
-                handleSubmit(event)
-                navigate(`/app/dashboard`)
-              }}
+      <div className={classes.root}>
+        <Container className={classes.container} maxWidth="sm">
+          <Typography color="textPrimary" variant="h4">
+            Password protected site
+          </Typography>
+          <Snackbar
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            open={error}
+            onClose={() => setError(false)}
+            message="Incorrect Password"
+          />
+          <form
+            method="post"
+            onSubmit={event => {
+              handleSubmit(event)
+              navigate(`/app/dashboard`)
+            }}
+          >
+            <Box my={3}>
+              <TextField
+                fullWidth
+                variant="filled"
+                label="Please enter your password to get access"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+                placeholder="Enter access code"
+                type="password"
+                onChange={handleUpdate}
+                value={password}
+              />
+            </Box>
+            <Button
+              color="primary"
+              variant="contained"
+              size="large"
+              type="submit"
             >
-              <Box my={3}>
-                <TextField
-                  fullWidth
-                  variant="filled"
-                  label="Please enter your password to get access"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  margin="normal"
-                  placeholder="Drop Down"
-                  type="password"
-                  onChange={handleUpdate}
-                  value={password}
-                />
-              </Box>
-              <Button
-                color="primary"
-                variant="contained"
-                size="large"
-                type="submit"
-              >
-                Submit
-              </Button>
-            </form>
-          </Container>
-        </div>
-      </Layout>
+              Submit
+            </Button>
+          </form>
+        </Container>
+      </div>
     </>
   )
 }

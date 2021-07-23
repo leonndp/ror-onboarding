@@ -360,7 +360,13 @@ const IndexPage = () => {
                   CRUNCH20
                 </Typography>
               </Box>
-              <Button color="primary" variant="contained" size="large">
+              <Button
+                component={Link}
+                href="/app/login"
+                color="primary"
+                variant="contained"
+                size="large"
+              >
                 Get Started
               </Button>
             </Box>
