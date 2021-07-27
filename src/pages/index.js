@@ -34,6 +34,7 @@ const useStyles = makeStyles(theme => ({
     minHeight: "100vh",
     width: "100%",
     flexGrow: 1,
+    [theme.breakpoints.down("md")]: {},
   },
   container: {
     margin: "auto",
@@ -256,7 +257,7 @@ const IndexPage = () => {
                       margin="normal"
                       placeholder="Enter Budget"
                     />
-                    <Box clone width="100%">
+                    <Box color="text.primary" clone width="100%">
                       <FormControl component="fieldset">
                         <FormLabel component="legend">
                           Your Current Services
@@ -268,17 +269,9 @@ const IndexPage = () => {
                                 name="services"
                                 component={CheckboxWithLabel}
                                 control={<Checkbox />}
-                                Label={{ label: "Paid Services" }}
+                                Label={{ label: "Paid Social" }}
                                 type="checkbox"
-                                value="Paid Services"
-                              />
-                              <Field
-                                name="services"
-                                component={CheckboxWithLabel}
-                                control={<Checkbox />}
-                                Label={{ label: "Paid Search" }}
-                                type="checkbox"
-                                value="Paid Search"
+                                value="Paid Social"
                               />
                               <Field
                                 name="services"
@@ -314,7 +307,7 @@ const IndexPage = () => {
                       </FormControl>
                     </Box>
                   </Box>
-                  <Box hidden={activeStep === 4}>
+                  <Box mt={2} hidden={activeStep === 4}>
                     <MobileStepper
                       variant="progress"
                       /* LinearProgressProps={{

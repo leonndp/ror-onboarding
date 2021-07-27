@@ -304,7 +304,7 @@ const IndexPage = () => {
                 Get Started
               </Button>
             </Box>
-            <Box hidden={activeStep === 4}>
+            <Box marginTop={3} hidden={activeStep === 4}>
               <MobileStepper
                 variant="progress"
                 LinearProgressProps={{

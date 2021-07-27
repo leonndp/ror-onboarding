@@ -34,6 +34,14 @@ const useStyles = makeStyles(theme => ({
   container: {
     margin: "auto",
   },
+  crunchLogo: {
+    position: "absolute",
+    top: "5rem",
+    right: "5rem",
+    [theme.breakpoints.down("md")]: {
+      right: "2rem",
+    },
+  },
 }))
 
 const LoginPage = () => {
@@ -65,6 +73,10 @@ const LoginPage = () => {
   return (
     <>
       <div className={classes.root}>
+        <StaticImage
+          className={classes.crunchLogo}
+          src="./../images/crunch-logo.png"
+        />
         <Container className={classes.container} maxWidth="sm">
           <Typography color="textPrimary" variant="h4">
             Password protected site

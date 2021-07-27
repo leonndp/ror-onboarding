@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
     width: "40%",
   },
   container: {
-    paddingTop: "5rem",
-    paddingBottom: "5rem",
+    paddingTop: "2.5rem",
+    paddingBottom: "2.5rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",

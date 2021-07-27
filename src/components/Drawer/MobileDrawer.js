@@ -35,8 +35,8 @@ const useStyles = makeStyles(theme => ({
     borderRight: "10px solid #5163AD",
   },
   container: {
-    paddingTop: "5rem",
-    paddingBottom: "5rem",
+    paddingTop: "2.5rem",
+    paddingBottom: "2.5rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",

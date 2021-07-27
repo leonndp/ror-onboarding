@@ -48,7 +48,7 @@ const DashboardPage = () => {
     <>
       <div className={classes.root}>
         <Container className={classes.container} maxWidth="md">
-          <Box textAlign="center">
+          <Box mx={"auto"} textAlign="center">
             <Grid container spacing={5}>
               <Grid item xs={12} md={6}>
                 <ButtonBase
