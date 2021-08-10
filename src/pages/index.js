@@ -387,7 +387,7 @@ const IndexPage = () => {
               </Typography>
               <Box p={2} my={3} bgcolor="common.white">
                 <Typography color="secondary" variant="h2">
-                  CRUNCH20
+                  PLANETFITNESS21
                 </Typography>
               </Box>
               <Button

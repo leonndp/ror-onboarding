@@ -6,7 +6,7 @@ export const getUser = () =>
 const setUser = user =>
   window.localStorage.setItem("rorUser", JSON.stringify(user))
 export const handleLogin = password => {
-  if (password === `CRUNCH20`) {
+  if (password === `PLANETFITNESS21`) {
     return setUser({
       username: `user`,
     })

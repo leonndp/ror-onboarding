@@ -56,7 +56,7 @@ const Drawer = () => {
             layout="fixed"
           />
           <Box clone py={2}>
-            <Typography variant="h2">Crunch Team</Typography>
+            <Typography variant="h3">Planet Fitness Team</Typography>
           </Box>
           <Typography>
             This is your on-boarding portal where you can access your agreement
