@@ -86,6 +86,7 @@ const IndexPage = () => {
                 firstName: "",
                 lastName: "",
                 email: "",
+                phone: "",
                 gymAddress: "",
                 gymCity: "",
                 gymState: "",
@@ -138,12 +139,12 @@ const IndexPage = () => {
                       component={TextField}
                       fullWidth
                       variant="filled"
-                      label="Your Location or Ownership Group"
+                      label="Ownership Group"
                       InputLabelProps={{
                         shrink: true,
                       }}
                       margin="normal"
-                      placeholder="Enter Location or Group"
+                      placeholder="Enter Ownership Group"
                     />
                     <Field
                       name="firstName"
@@ -182,6 +183,18 @@ const IndexPage = () => {
                       placeholder="Enter email"
                     />
                     <Field
+                      name="phone"
+                      component={TextField}
+                      fullWidth
+                      variant="filled"
+                      label="Phone"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      margin="normal"
+                      placeholder="Enter phone number"
+                    />
+                    <Field
                       name="title"
                       component={TextField}
                       fullWidth
@@ -200,48 +213,48 @@ const IndexPage = () => {
                       component={TextField}
                       fullWidth
                       variant="filled"
-                      label="Gym Location"
+                      label="Main or Headquarter Address for the Ownership Group"
                       InputLabelProps={{
                         shrink: true,
                       }}
                       margin="normal"
-                      placeholder="Enter Gym Address"
+                      placeholder="Enter Address"
                     />
                     <Field
                       name="gymCity"
                       component={TextField}
                       fullWidth
                       variant="filled"
-                      label="Gym City"
+                      label="Main or Headquarter City for the Ownership Group"
                       InputLabelProps={{
                         shrink: true,
                       }}
                       margin="normal"
-                      placeholder="Enter city"
+                      placeholder="Enter City"
                     />
                     <Field
                       name="gymState"
                       component={TextField}
                       fullWidth
                       variant="filled"
-                      label="Location ID"
+                      label="Main or Headquarter State for the Ownership Group"
                       InputLabelProps={{
                         shrink: true,
                       }}
                       margin="normal"
-                      placeholder="Enter state"
+                      placeholder="Enter State"
                     />
                     <Field
                       name="gymLocationId"
                       component={TextField}
                       fullWidth
                       variant="filled"
-                      label="Location ID"
+                      label="Number of Locations"
                       InputLabelProps={{
                         shrink: true,
                       }}
                       margin="normal"
-                      placeholder="Enter id"
+                      placeholder="Location Quantity"
                     />
                   </Box>
                   <Box hidden={activeStep !== 3}>
@@ -259,9 +272,11 @@ const IndexPage = () => {
                     />
                     <Box color="text.primary" clone width="100%">
                       <FormControl component="fieldset">
-                        <FormLabel component="legend">
-                          Your Current Services
-                        </FormLabel>
+                        <Box mt={2}>
+                          <FormLabel component="legend">
+                            Your Current Services
+                          </FormLabel>
+                        </Box>
                         <Grid container spacing={5} justify="space-between">
                           <Grid item xs>
                             <FormGroup>
