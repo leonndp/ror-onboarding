@@ -70,7 +70,7 @@ const DocumentsPage = () => {
                       variant="contained"
                       color="primary"
                       component="a"
-                      href="https://rorpartners.com/docs/ror_msa_document.pdf"
+                      href="https://rorpartners.com/docs/crunch/ror_msa_document.pdf"
                       target="_blank"
                       rel="noreferrer noopener"
                     >
@@ -99,7 +99,7 @@ const DocumentsPage = () => {
                       variant="contained"
                       color="primary"
                       component="a"
-                      href="https://rorpartners.com/docs/ror_sow_document.pdf"
+                      href="https://rorpartners.com/docs/crunch/ror_sow_document.pdf"
                       target="_blank"
                       rel="noreferrer noopener"
                     >
